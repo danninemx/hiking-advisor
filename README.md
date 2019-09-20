@@ -8,15 +8,21 @@ It takes in the user's preferences and provides weather forecasts and relevant d
 
 ![Hiking-Advisor-Screenshot01](./assets/images/Hiking-Advisor.png)
 
+---
+
 ## How to Use
 
-1. Enter destination city & date on landing page. (State is optional but can make your search more accurate.)
+1. Enter destination city & date on landing page.
+
+   (Search is worldwide and State is optional -- but it can improve search accuracy.)
 
 2. Check out weather conditions by time of day, and browse through trails in the area.
 
 3. Click on a trail to learn more.
 
-(4. Don't forget to bring a towel! And a sunscreen.)
+4. Don't forget to bring a towel! And a sunscreen.
+
+---
 
 ## Components
 
@@ -27,8 +33,10 @@ It takes in the user's preferences and provides weather forecasts and relevant d
 - [Animate.css](https://github.com/daneden/animate.css/)
 - [MomentJS](https://momentjs.com)
 
+---
+
 ## Developers
 
-- [Danny Kim](https://github.com/danninemx)
+- [Danny Kim](https://github.com/danninemx) (Team Leader)
 - [Jose Hernandez](https://github.com/Unlovingmotherboard)
 - [Joshua Munoz](https://github.com/Joshmunoz63)
