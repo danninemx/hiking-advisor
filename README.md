@@ -1,3 +1,5 @@
+# <a href="https://danninemx.github.io/hiking-advisor/">Hiking Advisor</a> <img src="https://github.com/danninemx/hiking-advisor/blob/master/assets/images/hiking-advisor-logo.png/" alt="hiking advisor logo" align="right" height="100"> <a name="top"></a>
+
 # [Hiking Advisor](https://danninemx.github.io/hiking-advisor/)
 
 ## Overview
