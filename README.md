@@ -17,8 +17,10 @@ It takes in the user's preferences and provides weather forecasts and relevant d
    (Search is worldwide and State is optional -- but it can improve search accuracy.)
 
 2. Check out weather conditions by time of day, and browse through trails in the area.
+   ![Hiking-Advisor-data](./assets/images/hiking-advisor-data.png)
 
 3. Click on a trail to learn more.
+   ![Hiking-Advisor-trail](./assets/images/hiking-advisor-trail.png)
 
 4. Don't forget to bring a towel! And a sunscreen.
 
