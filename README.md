@@ -24,6 +24,8 @@ It takes in the user's preferences and provides weather forecasts and relevant d
 
 4. Don't forget to bring a towel! And a sunscreen.
 
+<p align='right'><a href='#top'><sup>[Back to Top]</sup></a></p>
+
 ---
 
 ## Components
@@ -35,6 +37,8 @@ It takes in the user's preferences and provides weather forecasts and relevant d
 - [Animate.css](https://github.com/daneden/animate.css/)
 - [MomentJS](https://momentjs.com)
 
+<p align='right'><a href='#top'><sup>[Back to Top]</sup></a></p>
+
 ---
 
 ## Developers
@@ -42,3 +46,5 @@ It takes in the user's preferences and provides weather forecasts and relevant d
 - [Danny Kim](https://github.com/danninemx) (Team Leader)
 - [Jose Hernandez](https://github.com/Unlovingmotherboard)
 - [Joshua Munoz](https://github.com/Joshmunoz63)
+
+<p align='right'><a href='#top'><sup>[Back to Top]</sup></a></p>
