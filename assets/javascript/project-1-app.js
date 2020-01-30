@@ -3,39 +3,39 @@ $(document).ready(function () {
     /*------------\
     | GLOBAL VARS |
     \------------*/
-    var state = "";
-    var cityName = "";
-    var userInputDate = "";
+    let state = "";
+    let cityName = "";
+    let userInputDate = "";
 
-    var geocodeURL = "";
-    var openWeatherQueryURL = "";
-    var trailAPIQueryURL = "";
-    var lat = 0;
-    var lon = 0;
-    var weatherData = {};
-    var trailsData = {};
-    var savedarray;
-    var sixAM;
-    var nineAM;
-    var twelvePM;
-    var threePM;
-    var sixPM;
+    let geocodeURL = "";
+    let openWeatherQueryURL = "";
+    let trailAPIQueryURL = "";
+    let lat = 0;
+    let lon = 0;
+    let weatherData = {};
+    let trailsData = {};
+    let savedarray;
+    let sixAM;
+    let nineAM;
+    let twelvePM;
+    let threePM;
+    let sixPM;
 
-    var today;
-    var day1;
-    var day2;
-    var day3;
-    var day4;
-    var day5;
+    let today;
+    let day1;
+    let day2;
+    let day3;
+    let day4;
+    let day5;
 
-    var day1Forcast;
-    var day2Forcast;
-    var day3Forcast;
-    var day4Forcast;
-    var day5Forcast;
+    let day1Forcast;
+    let day2Forcast;
+    let day3Forcast;
+    let day4Forcast;
+    let day5Forcast;
 
-    var holdFilterHours = [];
-    var dataForUse = [];
+    let holdFilterHours = [];
+    let dataForUse = [];
 
 
     // DOM Connections //
@@ -199,24 +199,24 @@ $(document).ready(function () {
         dataForUse.push(day5Forcast);
         // console.log(dataForUse);
 
-        for (var U = 0; U < 5; U++) {
-            var dayOFWeek = moment(dataForUse[U][0].dt_txt);
+        for (let U = 0; U < 5; U++) {
+            let dayOFWeek = moment(dataForUse[U][0].dt_txt);
             dayOFWeek = moment(dayOFWeek).format("dddd");
             // console.log(" ")
             // console.log(dayOFWeek);
             // console.log(dataForUse);
-            var dayOFWeekH3 = $('<h3>').addClass('header').text(dayOFWeek);
+            let dayOFWeekH3 = $('<h3>').addClass('header').text(dayOFWeek);
             weatherRender(dataForUse, U, dayOFWeek, dayOFWeekH3);
         }
     }
 
     function weatherRender(dataForUse, U, dayOFWeek, dayOFWeekH3) {
 
-        var cardCont = $('<div>').addClass('container card-container col-lg-auto col-md-4 col-sm-12 weatherCont');
-        var cardWrap = $('<div>').addClass('card-wrapper').attr('id', dayOFWeek);
+        let cardCont = $('<div>').addClass('container card-container col-lg-auto col-md-4 col-sm-12 weatherCont');
+        let cardWrap = $('<div>').addClass('card-wrapper').attr('id', dayOFWeek);
 
 
-        for (var Y = 0; Y < dataForUse[U].length; Y++) {
+        for (let Y = 0; Y < dataForUse[U].length; Y++) {
             // console.log(dataForUse[U][Y].dt_txt);
 
             // console.log(dataForUse[U][Y].main.temp);
@@ -229,12 +229,12 @@ $(document).ready(function () {
 
 
             // Displaying time block in a day
-            var holdTimeANDDate = moment(dataForUse[U][Y].dt_txt).format('YYYY-MM-DD hh:mm A');
-            var holdTime = holdTimeANDDate.split(" ", 10);
-            var hourWrap = $('<div>').addClass('hourWrapper').attr('id', holdTime);
-            var time = $('<p>').addClass('time').text(holdTime[1] + ' ' + holdTime[2]);
+            let holdTimeANDDate = moment(dataForUse[U][Y].dt_txt).format('YYYY-MM-DD hh:mm A');
+            let holdTime = holdTimeANDDate.split(" ", 10);
+            let hourWrap = $('<div>').addClass('hourWrapper').attr('id', holdTime);
+            let time = $('<p>').addClass('time').text(holdTime[1] + ' ' + holdTime[2]);
 
-            var tempValue;
+            let tempValue;
 
             // Temperature warning
             if (dataForUse[U][Y].main.temp >= 90) {
@@ -249,8 +249,8 @@ $(document).ready(function () {
 
             // Hazardous weather conditions (https://openweathermap.org/weather-conditions)
             if (dataForUse[U][Y].weather[0].main == "Rain") {
-                var weatherValue = $('<p>').addClass('weatherCond').text(dataForUse[U][Y].weather[0].main);
-                var weatherIcon = $('<img class="wIcon" id ="icons" src="http://openweathermap.org/img/wn/' + dataForUse[U][Y].weather[0].icon + '@2x.png" />');
+                let weatherValue = $('<p>').addClass('weatherCond').text(dataForUse[U][Y].weather[0].main);
+                let weatherIcon = $('<img class="wIcon" id ="icons" src="http://openweathermap.org/img/wn/' + dataForUse[U][Y].weather[0].icon + '@2x.png" />');
                 $(hourWrap).addClass("rainyWeather");
             } else {
                 weatherIcon = $('<img class="wIcon" src="http://openweathermap.org/img/wn/' + dataForUse[U][Y].weather[0].icon + '@2x.png" />');
@@ -258,8 +258,8 @@ $(document).ready(function () {
             }
 
             // Append line items to container and wrapper.
-            var timeNTemp = $('<div>').append(time, tempValue).addClass('timeNTemp');
-            var condNIcon = $('<div>').append(weatherValue, weatherIcon).addClass('condNIcon');
+            let timeNTemp = $('<div>').append(time, tempValue).addClass('timeNTemp');
+            let condNIcon = $('<div>').append(weatherValue, weatherIcon).addClass('condNIcon');
 
             $(hourWrap).append(timeNTemp, condNIcon);
             $(cardWrap).append(hourWrap);
@@ -348,14 +348,14 @@ $(document).ready(function () {
     // Call this to render trail cards.
     function renderCard(ke, na, th, ra, le) {
         // Create divs that contain trail info.
-        var cardCont = $('<div>').addClass('card-container col-lg-2 col-md-4 col-sm-12 trailCont');
-        var cardWrap = $('<div>').addClass('card-wrapperTrail trailWrap').attr('id', ke);
+        let cardCont = $('<div>').addClass('card-container col-lg-2 col-md-4 col-sm-12 trailCont');
+        let cardWrap = $('<div>').addClass('card-wrapperTrail trailWrap').attr('id', ke);
 
         // Create trail line items.
-        var thumbnail = $('<img>').addClass('image').attr('src', th);
-        var name = $('<h3>').addClass('header').text(na);
-        var length = $('<p>').addClass('length').text(le + ' mi.');
-        var rating = $('<p>').addClass('rating').text(ra + ' rating');
+        let thumbnail = $('<img>').addClass('image').attr('src', th);
+        let name = $('<h3>').addClass('header').text(na);
+        let length = $('<p>').addClass('length').text(le + ' mi.');
+        let rating = $('<p>').addClass('rating').text(ra + ' rating');
 
         // Append line items to container and wrapper.
         $(cardWrap).append(thumbnail, name, length, rating);
@@ -450,17 +450,17 @@ $(document).ready(function () {
         $('#state, #name').val('');
 
         // Geocode AJAX call is made only when search button is clicked, so other API calls can be made from within.
-        var currentDate = moment().startOf('day').subtract(1, 'd');
+        let currentDate = moment().startOf('day').subtract(1, 'd');
         // console.log('current time is '+ currentDate);
 
         // Date entry validation
-        var currentDatePlus5 = moment(currentDate).add(5, "days");
+        let currentDatePlus5 = moment(currentDate).add(5, "days");
         userInputDate = moment(userInputDate, "YYYY/MM/DD");
         // console.log("Current Date: " + moment(currentDate).format("DD/MM/YYYY"));
         // console.log("User Date: " + moment(userInputDate).format("DD/MM/YYYY"));
         // console.log("Date 5 days from current Date: " + moment(currentDatePlus5).format("DD/MM/YYYY"));
 
-        var checkInBetween = moment(userInputDate).isBetween(currentDate, currentDatePlus5);
+        let checkInBetween = moment(userInputDate).isBetween(currentDate, currentDatePlus5);
         // console.log(checkInBetween);
 
         if (checkInBetween == true) {
@@ -548,7 +548,7 @@ $(document).ready(function () {
     // When the user clicks outside of the modal, close modal.
     window.onclick = function (event) {
         // This trick allows storing jQuery selector as javascript would.
-        var modal = $('#trailModal')[0];
+        let modal = $('#trailModal')[0];
         // console.log(modal);
         // console.log(event.target);
         // Consider: $(event.target)
